@@ -64,7 +64,6 @@
   },
   "dependencies": {
     "core-js": "^2.0.0",
-    "jQuery": "^1.7.4",
     "jquery": "^2.2.4",
     "normalize.css": "^4.0.0",
     "react": "^15.0.0",
