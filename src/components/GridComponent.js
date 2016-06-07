@@ -5,26 +5,28 @@ import $ from 'jquery';
 
 import ItemComponent from './ItemComponent';
 import BaseConfig from '../config/base';
+import {getFlickrUrl} from '../helpers/images.helper';
 
 require('styles//Grid.sass');
 
+
 class GridComponent extends React.Component {
     render() {
-        return (
-          <div className="grid-component">
-
-            <div class="grid-item">
-
-            </div>
-                <ItemComponent image="http://placehold.it/200x200" itemInfo="Author: John Smith"></ItemComponent>
-                <ItemComponent image="http://placehold.it/200x200" itemInfo="Author: John Smith"></ItemComponent>
-                <ItemComponent image="http://placehold.it/200x200" itemInfo="Author: John Smith"></ItemComponent>
-                <ItemComponent image="http://placehold.it/200x200" itemInfo="Author: John Smith"></ItemComponent>
-                <ItemComponent image="http://placehold.it/200x200" itemInfo="Author: John Smith"></ItemComponent>
-          </div>
-        );
+        if(this.state && this.state.images && this.state.images){
+            return (
+              <div className="grid-component">
+                    {this.state.images.map(function(image, index){
+                        let imageUrl = getFlickrUrl(image.farm, image.server, image.id, image.secret, 'z');
+                        return (
+                            <ItemComponent image={imageUrl} imageId={image.id}></ItemComponent>
+                        );
+                    })}
+              </div>
+            );
+        }else{
+            return <div>Loading...</div>
+        }
     }
-
     componentDidMount(){
         this.serverImagesRequest = $.get({
           url: BaseConfig.imagesApi.baseEndpoint,
@@ -37,16 +39,16 @@ class GridComponent extends React.Component {
             nojsoncallback: '?'
           },
           dataType: 'json',
-          success: _onServerImagesSuccess.bind(this),
-          error: resp => {
-            console.error(resp);
-          }
+          success: _onServerImagesSuccess.bind(this)
         });
     }
 }
 
 function _onServerImagesSuccess(images){
-    console.log(images);
+    this.setState({
+        images: images.photos.photo
+    });
+    console.log(this.state);
 }
 
 GridComponent.displayName = 'GridComponent';
