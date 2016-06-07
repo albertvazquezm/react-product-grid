@@ -7,7 +7,7 @@ import GridComponent from './GridComponent';
 class AppComponent extends React.Component {
   render() {
     return (
-      <GridComponent></GridComponent>
+      <GridComponent galleryId="72157663296681380"></GridComponent>
     );
   }
 }
