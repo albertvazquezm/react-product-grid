@@ -1,2 +1,18 @@
-.item-component
-  border: 1px dashed #f00
+.item
+  padding: 40px;
+.item, .triangle
+  margin: 0 auto;
+  transform-origin: 50% 50%;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
+
+.item
+  transform: rotate(45deg) translateY(10px);
+  .triangle
+    width: 255px;
+    height: 255px;
+    transform: rotate(-45deg) translateY(-110px);
+    img
+      width: auto
+      height: 100%;
