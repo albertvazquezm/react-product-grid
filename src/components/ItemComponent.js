@@ -22,7 +22,9 @@ class ItemComponent extends React.Component {
         <div className="item">
           <div className="triangle">
             {imageElement}
-            <div className="item-info">{this.props.imageId}</div>
+            <div className="caption">
+              <p>{this.props.imageId}</p>
+            </div>
           </div>
         </div>
     );
