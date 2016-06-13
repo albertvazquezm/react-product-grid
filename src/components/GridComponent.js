@@ -28,7 +28,7 @@ class GridComponent extends React.Component {
                   let imageUrl = getFlickrUrl(image.farm, image.server, image.id, image.secret, IMAGE_SIZE_FORMAT);
                   return (
                     <div className="col-md-3 col-sm-6 grid-item">
-                      <ItemComponent image={imageUrl} imageId={image.id}></ItemComponent>
+                      <ItemComponent image={imageUrl} ownerId={image.owner} imageId={image.id}></ItemComponent>
                     </div>
                   );
               })}
