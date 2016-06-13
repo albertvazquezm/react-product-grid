@@ -6,7 +6,6 @@ require('styles//vendor/spinner.css');
 
 class SpinnerComponent extends React.Component {
   render() {
-
     return (
       <div className="sk-folding-cube">
         <div className="sk-cube1 sk-cube"></div>

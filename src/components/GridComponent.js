@@ -48,6 +48,11 @@ class GridComponent extends React.Component {
     }
 }
 
+/**
+ * Server images success handler
+ * @private
+ * @param {object} apiResponse API Response
+ */
 function _onServerImagesSuccess(apiResponse){
   let images = apiResponse.photos.photo;
   this.setState({
@@ -55,10 +60,18 @@ function _onServerImagesSuccess(apiResponse){
   });
 }
 
+/**
+ * Increments current page
+ * @private
+ */
 function _incrementPage(){
   this.currentPage ++;
 }
 
+/**
+ * Loads new page
+ * @private
+ */
 function _loadPage(){
   this.serverImagesRequest = $.get({
     url: BaseConfig.imagesApi.baseEndpoint,
