@@ -17,13 +17,19 @@
         height: 212px;
         transform: rotate(-45deg) translateY(-101px);
         text-align: center;
-    img
-        width: auto
-        height: 100%;
-        left: -25%;
         .caption
-            position: absolute;
-            bottom: -20%;
+            bottom: 0;
+            height: 50%;
             background: #fff;
-            width: 100%;
-            transform: rotate(-45deg);
+            transition: 300ms ease-in-out;
+        img
+            width: auto
+            height: 100%;
+            left: -25%;
+            transition: 400ms ease-in-out;
+        &:hover
+            img
+                transform: translateY(-20%);
+            .caption
+                transform: translateY(-100%);
+
