@@ -15,6 +15,7 @@
         height: 212px;
         transform: rotate(-45deg) translateY(-101px);
         text-align: center;
+        -webkit-backface-visibility: hidden;
         .caption
             bottom: 0;
             height: 50%;
@@ -25,10 +26,11 @@
                 color: #999;
                 font-size: 14px;
         img
-            width: auto
+            width: auto;
             height: 100%;
             left: -25%;
             transition: 400ms ease-in-out;
+            display: block;
         &:hover
             img
                 transform: translateY(-20%);
