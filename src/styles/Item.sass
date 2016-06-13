@@ -1,26 +1,29 @@
 .item
-  padding: 40px;
+    padding: 40px;
 .item, .triangle
-  margin: 0 auto;
-  transform-origin: 50% 50%;
-  overflow: hidden;
-  width: 150px;
-  height: 150px;
+    margin: 0 auto;
+    transform-origin: 50% 50%;
+    overflow: hidden;
+    width: 150px;
+    height: 150px;
 
 .item
-  transform: rotate(45deg) translateY(10px);
-  .triangle
-    width: 212px;
-    height: 212px;
-    transform: rotate(-45deg) translateY(-110px);
-    img
-      width: auto
-      height: 100%;
-      left: -25%;
-      position: absolute;
-  .caption
+    transform: rotate(45deg);
     position: absolute;
-    bottom: -20%;
-    background: #fff;
-    width: 100%;
-    transform: rotate(-45deg);
+    top: 31px;
+    left: 46px;
+    .triangle
+        width: 212px;
+        height: 212px;
+        transform: rotate(-45deg) translateY(-101px);
+        text-align: center;
+    img
+        width: auto
+        height: 100%;
+        left: -25%;
+        .caption
+            position: absolute;
+            bottom: -20%;
+            background: #fff;
+            width: 100%;
+            transform: rotate(-45deg);
